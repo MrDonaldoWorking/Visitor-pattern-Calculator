@@ -1,8 +1,8 @@
 package visitor;
 
-import token.state.BraceToken;
-import token.state.NumberToken;
-import token.state.OperationToken;
+import token.statepattern.BraceToken;
+import token.statepattern.NumberToken;
+import token.statepattern.OperationToken;
 
 public interface TokenVisitor {
     void visit(final NumberToken token);
