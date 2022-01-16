@@ -3,6 +3,8 @@ package token.statepattern;
 import token.Token;
 import visitor.TokenVisitor;
 
+import java.io.IOException;
+
 public class BraceToken implements Token {
     private final char bracket;
 
@@ -15,7 +17,11 @@ public class BraceToken implements Token {
     }
 
     @Override
-    public void accept(final TokenVisitor visitor) {
+    public void accept(final TokenVisitor visitor) throws IOException {
         visitor.visit(this);
+    }
+
+    public char getBracket() {
+        return bracket;
     }
 }

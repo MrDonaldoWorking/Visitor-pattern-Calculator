@@ -1,7 +1,7 @@
 import token.Token;
 import token.Tokenizer;
 import visitor.ParserVisitor;
-import visitor.TokenVisitor;
+import visitor.PrintVisitor;
 
 import java.io.IOException;
 import java.util.List;
@@ -12,8 +12,20 @@ public class Main {
         final List<Token> tokens = tokenizer.tokenize();
 
         final ParserVisitor parser = new ParserVisitor();
-        tokens.forEach(token -> token.accept(parser));
+        for (final Token token : tokens) {
+            token.accept(parser);
+        }
 
         final List<Token> rpn = parser.getTokens();
+        final PrintVisitor printer0 = new PrintVisitor(System.out);
+        for (final Token token : tokens) {
+            token.accept(printer0);
+        }
+        printer0.print();
+        System.out.println();
+        for (final Token token : rpn) {
+            token.accept(printer0);
+        }
+        printer0.print();
     }
 }

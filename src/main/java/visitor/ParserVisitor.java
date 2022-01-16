@@ -31,7 +31,7 @@ public class ParserVisitor implements TokenVisitor {
                 if (onTop instanceof BraceToken && ((BraceToken) onTop).isOpen()) {
                     break;
                 }
-                tokens.add(token);
+                tokens.add(onTop);
             }
         }
     }
