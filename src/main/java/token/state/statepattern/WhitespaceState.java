@@ -6,8 +6,6 @@ import token.state.State;
 public class WhitespaceState extends State {
     @Override
     public void consume(final Tokenizer tokenizer, final char ch) {
-        if (Character.isWhitespace(ch)) {
-            tokenizer.setCurrentState(next(ch));
-        }
+        tokenizer.setCurrentState(next(ch));
     }
 }

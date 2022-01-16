@@ -12,8 +12,8 @@ public class BraceState extends State {
     }
 
     @Override
-    public void consume(final Tokenizer tokenizer, final char bracket) {
+    public void consume(final Tokenizer tokenizer, final char ch) {
         tokenizer.getTokens().add(new BraceToken(bracket));
-        tokenizer.setCurrentState(next(bracket));
+        tokenizer.setCurrentState(next(ch));
     }
 }

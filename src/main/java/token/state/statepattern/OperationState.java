@@ -13,8 +13,8 @@ public class OperationState extends State {
     }
 
     @Override
-    public void consume(final Tokenizer tokenizer, final char operation) {
+    public void consume(final Tokenizer tokenizer, final char ch) {
         tokenizer.getTokens().add(new OperationToken(operation));
-        tokenizer.setCurrentState(next(operation));
+        tokenizer.setCurrentState(next(ch));
     }
 }
