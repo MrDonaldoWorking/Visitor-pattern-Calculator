@@ -36,7 +36,7 @@ public class OperationToken implements Token {
     }
 
     @Override
-    public void accept(final TokenVisitor visitor) throws IOException {
+    public void accept(final TokenVisitor visitor) {
         visitor.visit(this);
     }
 
